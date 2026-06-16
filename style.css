@@ -1,0 +1,185 @@
+:root {
+  --cream: #f6f0e6;
+  --paper: #fdfaf4;
+  --mauve: #b29390;
+  --brown: #4a332e;
+  --pink: #f0d3d3;
+  --beige: #f3e3d3;
+  --lilac: #d9c7e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--brown);
+  background: var(--paper);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 8%;
+  flex-wrap: wrap;
+}
+
+.hero__img {
+  position: relative;
+  flex: 0 1 320px;
+  text-align: center;
+}
+
+.hero__img img {
+  border-radius: 24px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__text {
+  flex: 1 1 380px;
+  max-width: 460px;
+}
+
+.eyebrow {
+  font-size: 1rem;
+  color: var(--mauve);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.hero h1 {
+  font-size: 3.4rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.hero__desc {
+  color: #4d3f3c;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* ===== ABOUT ===== */
+.about {
+  background: var(--mauve);
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.about__text {
+  max-width: 640px;
+  margin: 0 auto;
+  color: #6e5b56;
+}
+
+/* ===== HOBBIES ===== */
+.hobbies {
+  padding: 90px 8%;
+  text-align: center;
+}
+
+.hobbies__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.hobby {
+  border-radius: 20px;
+  padding: 18px;
+  text-align: left;
+}
+
+.hobby img {
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.hobby h3 {
+  font-size: 1.2rem;
+}
+
+.card--pink { background: var(--pink); }
+.card--beige { background: var(--beige); }
+.card--lilac { background: var(--lilac); }
+.card--cream { background: var(--cream); }
+
+.hobbies {
+  background: var(--cream); /* or kahit anong color */
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  background: var(--mauve);
+  color: var(--brown);
+  padding: 65px 8%;
+  text-align: center;
+}
+
+.contact .section-title { color: var(--brown); }
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  justify-content: center;
+  gap: 20px;
+}
+
+.pill {
+  background: var(--paper);
+  color: var(--brown);
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.pill:hover {
+  background: var(--brown);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 26px 8%;
+  background: var(--brown);
+  color: var(--paper);
+  font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero { padding: 50px 6%; text-align: center; }
+  .hero__text { display: flex; flex-direction: column; align-items: center; }
+  .hero h1 { font-size: 2.4rem; }
+}
