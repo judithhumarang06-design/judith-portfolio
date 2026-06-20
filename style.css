@@ -85,10 +85,16 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 
-.about__text {
-  max-width: 640px;
-  margin: 0 auto;
-  color: #6e5b56;
+.about-text {
+    white-space: pre-wrap;  
+    font-family: inherit;  
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #4a332e;
+
+    text-align: center;      
+    max-width: 900px;       
+    margin: 0 auto;
 }
 
 /* ===== HOBBIES ===== */
