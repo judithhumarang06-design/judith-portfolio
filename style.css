@@ -51,7 +51,7 @@ section {
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   width: 100%;
   padding: 16px 4%;
   background: rgba(253, 250, 244, 0.95);
@@ -62,7 +62,7 @@ section {
 .header__nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: 10px;
 }
