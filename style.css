@@ -10,6 +10,9 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 80px; }
+
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--brown);
@@ -22,6 +25,51 @@ h1, h2, h3 {
 }
 
 img { max-width: 100%; display: block; }
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8%;
+  background: rgba(253, 250, 244, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--pink);
+}
+
+.header__logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: none;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: var(--pink);
+  color: var(--brown);
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+  background: var(--brown);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -86,21 +134,21 @@ img { max-width: 100%; display: block; }
 }
 
 .about-text {
-    white-space: pre-wrap;  
-    font-family: inherit;  
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #4a332e;
-
-    text-align: center;      
-    max-width: 900px;       
-    margin: 0 auto;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a332e;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* ===== HOBBIES ===== */
+/* ===== HOBBIES / OUTPUTS ===== */
 .hobbies {
   padding: 90px 8%;
   text-align: center;
+  background: var(--cream);
 }
 
 .hobbies__grid {
@@ -129,11 +177,12 @@ img { max-width: 100%; display: block; }
 .card--lilac { background: var(--lilac); }
 .card--cream { background: var(--cream); }
 
-.hobbies {
-  background: var(--cream); /* or kahit anong color */
+/* ===== LIFE LATELY ===== */
+.life {
+  background: var(--paper);
 }
 
-/* ===== CONTACT ===== */
+/* ===== CONTACT / SOCIALS ===== */
 .contact {
   background: var(--mauve);
   color: var(--brown);
@@ -185,7 +234,13 @@ img { max-width: 100%; display: block; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .header { flex-direction: column; gap: 10px; padding: 12px 6%; }
+  .header__nav { justify-content: center; }
+  .nav-btn { padding: 6px 14px; font-size: 0.8rem; }
+
   .hero { padding: 50px 6%; text-align: center; }
   .hero__text { display: flex; flex-direction: column; align-items: center; }
   .hero h1 { font-size: 2.4rem; }
+
+  .contact__grid { grid-template-columns: 1fr; }
 }
