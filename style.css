@@ -1,4 +1,3 @@
-
 /* ===== COLOR PALETTE ===== */
 :root {
   --cream: #f6f0e6;
@@ -258,6 +257,110 @@ section {
   font-size: 0.85rem;
 }
 
+/* ===== LIFE LATELY CLICKABLE CARDS ===== */
+a.hobby {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ===== LIFE LATELY GALLERY PAGES ===== */
+.gallery-page {
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 50px;
+  background: var(--pink);
+  color: var(--brown);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.back-btn:hover {
+  background: var(--brown);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid var(--cream);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* para gumana ang hidden attribute kahit may display rules */
+[hidden] {
+  display: none !important;
+}
+
+/* ===== PROJECTS (BOOTSTRAP GRID) ===== */
+.projects-section {
+  padding: 80px 5%;
+  background: var(--cream);
+}
+
+.projects-section .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-section .row {
+  --bs-gutter-x: 0;
+}
+
+/* fixed height ng bawat row */
+.row-tall {
+  height: 260px;
+}
+
+.row-mid {
+  height: 320px;
+}
+
+/* bawat picture ay nasa loob ng card at hindi lalampas */
+.projects-section .card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 3px solid var(--paper);
+  border-radius: 16px;
+  background: var(--pink);
+}
+
+.projects-section .card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.projects-section .card:hover img {
+  transform: scale(1.04);
+}
+
 /* ===== TABLET ===== */
 @media (max-width: 1000px) {
   .hobbies__grid {
@@ -308,6 +411,23 @@ section {
     padding: 60px 6%;
   }
 
+  .projects-section {
+    padding: 50px 4%;
+  }
+
+  .row-tall {
+    height: 180px;
+  }
+
+  .row-mid {
+    height: 240px;
+  }
+
+  .projects-section .card {
+    border-width: 2px;
+    border-radius: 10px;
+  }
+
   .section-title {
     font-size: 1.9rem;
   }
@@ -340,114 +460,6 @@ section {
   .section-title {
     font-size: 1.7rem;
   }
-
-  
-/* ===== BENTO OUTPUTS ===== */
-.outputs-section {
-  padding: 80px 5%;
-  background: var(--cream);
-}
-
-.bento-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.bento-container .row {
-  --bs-gutter-x: 0;
-}
-
-.bento-container .row-tall {
-  height: 280px;
-}
-
-.bento-container .row-mid {
-  height: 340px;
-}
-
-.bento-container .row-short {
-  height: 180px;
-}
-
-.bento-card {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border: 3px solid var(--paper);
-  border-radius: 16px;
-  background: var(--pink);
-}
-
-.bento-card img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.bento-card:hover img {
-  transform: scale(1.04);
-}
-
-.bento-small {
-  height: 50%;
-}
-
-@media (max-width: 768px) {
-  .outputs-section {
-    padding: 50px 4%;
-  }
-
-  .bento-container .row-tall {
-    height: 180px;
-  }
-
-  .bento-container .row-mid {
-    height: 220px;
-  }
-
-  .bento-container .row-short {
-    height: 120px;
-  }
-
-  .bento-card {
-    border-width: 2px;
-    border-radius: 10px;
-  }
-}
-
-  
-/* FIXED IMAGE SIZE */
-.row-tall {
-  height: 260px;
-}
-
-.row-mid {
-  height: 320px;
-}
-
-.row-short {
-  height: 160px;
-}
-
-/* Keep every image inside its fixed-size card */
-.row-tall .card,
-.row-mid .card,
-.row-short .card {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.row-tall .card img,
-.row-mid .card img,
-.row-short .card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
   .hobby {
     padding: 15px;
