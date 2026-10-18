@@ -7,9 +7,11 @@
   --pink: #f0d3d3;
   --beige: #f3e3d3;
   --lilac: #d9c7e0;
+
+  --row-tall: 320px;
+  --row-mid: 420px;
 }
 
-/* ===== GENERAL ===== */
 * {
   margin: 0;
   padding: 0;
@@ -332,11 +334,11 @@ a.hobby {
 
 /* fixed height ng bawat row */
 .row-tall {
-  height: 260px;
+  height: var(--row-tall);
 }
 
 .row-mid {
-  height: 320px;
+  height: var(--row-mid);
 }
 
 /* kailangan para sundin ng cards ang taas ng row (hindi ng laki ng picture) */
@@ -422,12 +424,9 @@ a.hobby {
     padding: 50px 4%;
   }
 
-  .row-tall {
-    height: 180px;
-  }
-
-  .row-mid {
-    height: 240px;
+  :root {
+    --row-tall: 200px;
+    --row-mid: 280px;
   }
 
   .projects-section .card {
