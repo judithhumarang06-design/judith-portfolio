@@ -64,83 +64,154 @@
     </div>
   </section>
 
-  <!-- OUTPUTS -->
-<section class="projects-section" id="projects">
-  <h2 class="section-title">Projects</h2>
+  <!-- PROJECTS / OUTPUTS -->
+  <section class="projects-section" id="projects">
+    <h2 class="section-title">Projects</h2>
 
-  <div class="container-fluid p-3">
-    <div class="row row-tall">
-      <div class="col-4 p-1">
-        <div class="card p-1 h-100">
-          <img src="output1.jpg" alt="Output 1">
+    <div class="container-fluid p-3">
+      <div class="row row-tall">
+        <div class="col-4 p-1">
+          <div class="card p-1 h-100">
+            <img src="output1.jpg" alt="Output 1">
+          </div>
+        </div>
+        <div class="col-8 p-1">
+          <div class="card p-1 h-100">
+            <img src="output2.jpg" alt="Output 2">
+          </div>
         </div>
       </div>
-      <div class="col-8 p-1">
-        <div class="card p-1 h-100">
-          <img src="output2.jpg" alt="Output 2">
+
+      <div class="row row-mid">
+        <div class="col-3 p-1">
+          <div class="card p-1 h-100">
+            <img src="output3.jpg" alt="Output 3">
+          </div>
+        </div>
+
+        <div class="col-6 p-1">
+          <div class="row h-100">
+            <div class="col-12 p-1 h-50">
+              <div class="card p-1 h-100">
+                <img src="output4.jpg" alt="Output 4">
+              </div>
+            </div>
+            <div class="col-6 p-1 h-50">
+              <div class="card p-1 h-100">
+                <img src="output5.jpg" alt="Output 5">
+              </div>
+            </div>
+            <div class="col-6 p-1 h-50">
+              <div class="card p-1 h-100">
+                <img src="output6.jpg" alt="Output 6">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 p-1">
+          <div class="card p-1 h-100">
+            <img src="output7.jpg" alt="Output 7">
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="row row-mid">
-      <div class="col-3 p-1">
-        <div class="card p-1 h-100">
-          <img src="output3.jpg" alt="Output 3">
-        </div>
-      </div>
-
-      <div class="col-6 p-1">
-        <div class="row h-100">
-          <div class="col-12 p-1 h-50">
-            <div class="card p-1 h-100">
-              <img src="output4.jpg" alt="Output 4">
-            </div>
-          </div>
-          <div class="col-6 p-1 h-50">
-            <div class="card p-1 h-100">
-              <img src="output5.jpg" alt="Output 5">
-            </div>
-          </div>
-          <div class="col-6 p-1 h-50">
-            <div class="card p-1 h-100">
-              <img src="output6.jpg" alt="Output 6">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3 p-1">
-        <div class="card p-1 h-100">
-          <img src="output7.jpg" alt="Output 7">
-        </div>
-      </div>
-    </div>
- </section>
   <!-- LIFE LATELY -->
   <section class="hobbies life" id="life-lately">
-    <h2 class="section-title">Life Lately</h2>
 
-    <div class="hobbies__grid">
-      <div class="hobby card--pink">
-        <img src="hobby1.jpg" alt="Spending time with family">
-        <h3>Spending time with family</h3>
-      </div>
+    <!-- MAIN VIEW: yung 4 na boxes -->
+    <div id="life-main">
+      <h2 class="section-title">Life Lately</h2>
 
-      <div class="hobby card--beige">
-        <img src="hobby2.jpg" alt="Road trip">
-        <h3>Road Trip</h3>
-      </div>
+      <div class="hobbies__grid">
+        <a href="#family" class="hobby card--pink">
+          <img src="hobby1.jpg" alt="Spending time with family">
+          <h3>Spending time with family</h3>
+        </a>
 
-      <div class="hobby card--lilac">
-        <img src="hobby3.jpg" alt="Nature trip">
-        <h3>Nature Trip</h3>
-      </div>
+        <a href="#roadtrip" class="hobby card--beige">
+          <img src="hobby2.jpg" alt="Road trip">
+          <h3>Road Trip</h3>
+        </a>
 
-      <div class="hobby card--cream">
-        <img src="hobby4.jpg" alt="Night out">
-        <h3>Night Out</h3>
+        <a href="#nature" class="hobby card--lilac">
+          <img src="hobby3.jpg" alt="Nature trip">
+          <h3>Nature Trip</h3>
+        </a>
+
+        <a href="#nightout" class="hobby card--cream">
+          <img src="hobby4.jpg" alt="Night out">
+          <h3>Night Out</h3>
+        </a>
       </div>
     </div>
+
+    <!-- dito ilalabas ng JavaScript ang gallery -->
+    <div id="life-gallery" class="gallery-page" hidden></div>
+
+    <!-- JAVASCRIPT NG LIFE LATELY (inline) -->
+    <script>
+      // Dito mo ilalagay ang mga pictures. Dagdagan lang ang list para dumami.
+      const galleries = {
+        family: {
+          title: 'Spending Time with Family',
+          photos: ['family1.jpg', 'family2.jpg', 'family3.jpg']
+        },
+        roadtrip: {
+          title: 'Road Trip',
+          photos: ['roadtrip1.jpg', 'roadtrip2.jpg', 'roadtrip3.jpg']
+        },
+        nature: {
+          title: 'Nature Trip',
+          photos: ['nature1.jpg', 'nature2.jpg', 'nature3.jpg']
+        },
+        nightout: {
+          title: 'Night Out',
+          photos: ['nightout1.jpg', 'nightout2.jpg', 'nightout3.jpg']
+        }
+      };
+
+      const section    = document.getElementById('life-lately');
+      const lifeMain   = document.getElementById('life-main');
+      const galleryBox = document.getElementById('life-gallery');
+
+      function showGallery() {
+        const id = location.hash.slice(1);
+
+        if (Object.hasOwn(galleries, id)) {
+          const data = galleries[id];
+
+          // gumawa ng gallery page gamit ang data
+          galleryBox.innerHTML = `
+            <button class="back-btn" type="button">← Back to Life Lately</button>
+            <h2 class="section-title">${data.title}</h2>
+            <div class="gallery-grid">
+              ${data.photos
+                .map((src, i) => `<img src="${src}" alt="${data.title} photo ${i + 1}">`)
+                .join('')}
+            </div>
+          `;
+
+          galleryBox.querySelector('.back-btn').addEventListener('click', () => {
+            location.hash = 'life-lately';
+          });
+
+          galleryBox.hidden = false;
+          lifeMain.hidden = true;
+          section.scrollIntoView();
+        } else {
+          // balik sa 4 na boxes
+          galleryBox.hidden = true;
+          galleryBox.innerHTML = '';
+          lifeMain.hidden = false;
+        }
+      }
+
+      window.addEventListener('hashchange', showGallery);
+      showGallery(); // para gumana rin kapag direktang binuksan ang index.html#family
+    </script>
   </section>
 
   <!-- SOCIALS -->
