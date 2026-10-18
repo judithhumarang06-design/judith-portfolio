@@ -121,7 +121,6 @@
   <!-- LIFE LATELY -->
   <section class="hobbies life" id="life-lately">
 
-    <!-- MAIN VIEW: yung 4 na boxes -->
     <div id="life-main">
       <h2 class="section-title">Life Lately</h2>
 
@@ -148,12 +147,9 @@
       </div>
     </div>
 
-    <!-- dito ilalabas ng JavaScript ang gallery -->
     <div id="life-gallery" class="gallery-page" hidden></div>
 
-    <!-- JAVASCRIPT NG LIFE LATELY (inline) -->
     <script>
-      // Dito mo ilalagay ang mga pictures. Dagdagan lang ang list para dumami.
       const galleries = {
         family: {
           title: 'Spending Time with Family',
@@ -183,7 +179,6 @@
         if (Object.hasOwn(galleries, id)) {
           const data = galleries[id];
 
-          // gumawa ng gallery page gamit ang data
           galleryBox.innerHTML = `
             <button class="back-btn" type="button">← Back to Life Lately</button>
             <h2 class="section-title">${data.title}</h2>
@@ -202,7 +197,7 @@
           lifeMain.hidden = true;
           section.scrollIntoView();
         } else {
-          // balik sa 4 na boxes
+          
           galleryBox.hidden = true;
           galleryBox.innerHTML = '';
           lifeMain.hidden = false;
@@ -210,7 +205,7 @@
       }
 
       window.addEventListener('hashchange', showGallery);
-      showGallery(); // para gumana rin kapag direktang binuksan ang index.html#family
+      showGallery();
     </script>
   </section>
 
