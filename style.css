@@ -310,7 +310,6 @@ a.hobby {
   transform: scale(1.03);
 }
 
-/* para gumana ang hidden attribute kahit may display rules */
 [hidden] {
   display: none !important;
 }
@@ -330,7 +329,6 @@ a.hobby {
   --bs-gutter-x: 0;
 }
 
-/* fixed height ng bawat row */
 .row-tall {
   height: 260px;
 }
@@ -339,7 +337,6 @@ a.hobby {
   height: 320px;
 }
 
-/* bawat picture ay nasa loob ng card at hindi lalampas */
 .projects-section .card {
   width: 100%;
   height: 100%;
