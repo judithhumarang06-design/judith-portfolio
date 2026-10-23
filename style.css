@@ -182,6 +182,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
+  align-items: stretch;
 }
 
 .hobby {
@@ -227,12 +228,17 @@ section {
 }
 
 /* ===== LIFE LATELY ===== */
+/* FIX: dating walang padding kaya dikit sa Links & Things */
 .life {
   background: var(--paper);
+  padding: 90px 8% 110px;
+  text-align: center;
 }
 
 /* ===== SOCIALS ===== */
 .contact {
+  position: relative;
+  clear: both;
   background: var(--mauve);
   color: var(--brown);
   padding: 80px 8%;
@@ -259,6 +265,64 @@ section {
   font-size: 0.85rem;
 }
 
+/* ===== LIFE LATELY CLICKABLE CARDS ===== */
+a.hobby {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ===== LIFE LATELY GALLERY PAGES ===== */
+.gallery-page {
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 50px;
+  background: var(--pink);
+  color: var(--brown);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.back-btn:hover {
+  background: var(--brown);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid var(--cream);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* para gumana ang hidden attribute kahit may display rules */
+[hidden] {
+  display: none !important;
+}
+
 /* ===== PROJECTS (BOOTSTRAP GRID) ===== */
 .projects-section {
   padding: 80px 5%;
@@ -274,7 +338,7 @@ section {
   --bs-gutter-x: 0;
 }
 
-
+/* fixed height ng bawat row */
 .row-tall {
   height: var(--row-tall);
 }
@@ -283,11 +347,13 @@ section {
   height: var(--row-mid);
 }
 
+/* kailangan para sundin ng cards ang taas ng row (hindi ng laki ng picture) */
 .row-tall > *,
 .row-mid > * {
   height: 100%;
 }
 
+/* bawat picture ay nasa loob ng card at hindi lalampas */
 .projects-section .card {
   width: 100%;
   height: 100%;
@@ -358,6 +424,10 @@ section {
   .hobbies,
   .contact {
     padding: 60px 6%;
+  }
+
+  .life {
+    padding: 60px 6% 80px;
   }
 
   .projects-section {
