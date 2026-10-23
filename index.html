@@ -147,69 +147,6 @@
       </div>
     </div>
 
-    <div id="life-gallery" class="gallery-page" hidden></div>
-
-    <script>
-      const galleries = {
-        family: {
-          title: 'Spending Time with Family',
-          photos: ['family1.jpg', 'family2.jpg', 'family3.jpg', 'family4.jpg']
-        },
-        roadtrip: {
-          title: 'Road Trip',
-          photos: ['roadtrip1.jpg', 'roadtrip2.jpg', 'roadtrip3.jpg', 'roadtrip4.jpg']
-        },
-        nature: {
-          title: 'Nature Trip',
-          photos: ['nature1.jpg', 'nature2.jpg', 'nature3.jpg', 'nature4.jpg']
-        },
-        nightout: {
-          title: 'Night Out',
-          photos: ['nightout1.jpg', 'nightout2.jpg', 'nightout3.jpg', 'nightout4.jpg']
-        }
-      };
-
-      const section    = document.getElementById('life-lately');
-      const lifeMain   = document.getElementById('life-main');
-      const galleryBox = document.getElementById('life-gallery');
-
-      function showGallery() {
-        const id = location.hash.slice(1);
-
-        if (Object.hasOwn(galleries, id)) {
-          const data = galleries[id];
-
-          galleryBox.innerHTML = `
-            <button class="back-btn" type="button">← Back to Life Lately</button>
-            <h2 class="section-title">${data.title}</h2>
-            <div class="gallery-grid">
-              ${data.photos
-                .map((src, i) => `<img src="${src}" alt="${data.title} photo ${i + 1}">`)
-                .join('')}
-            </div>
-          `;
-
-          galleryBox.querySelector('.back-btn').addEventListener('click', () => {
-            location.hash = 'life-lately';
-          });
-
-          galleryBox.hidden = false;
-          lifeMain.hidden = true;
-          section.scrollIntoView();
-        } else {
-          
-          galleryBox.hidden = true;
-          galleryBox.innerHTML = '';
-          lifeMain.hidden = false;
-        }
-      }
-
-      window.addEventListener('hashchange', showGallery);
-      showGallery();
-    </script>
-  </section>
-
-  <!-- SOCIALS -->
 <!-- SOCIALS -->
 <section class="contact" id="contacts">
   <h2 class="section-title">Links &amp; Things</h2>
