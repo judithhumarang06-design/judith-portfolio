@@ -632,6 +632,7 @@ section {
 }
 
 .bento__item {
+  margin: 0;
   position: relative;
   overflow: hidden;
   min-width: 0;
@@ -702,4 +703,10 @@ section {
   .bento__item img {
     transition: none;
   }
+}
+
+.gallery-back {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
 }
